@@ -1,0 +1,210 @@
+/* --- Reseteo Básico y Fuente --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #1e133a 0%, #4a235a 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+/* --- Tarjeta Principal "Glassmorphism" --- */
+.calculator-container {
+    width: 100%;
+    max-width: 480px;
+    z-index: 10;
+}
+
+.calculator-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* --- Tipografía --- */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.5px;
+}
+
+p {
+    text-align: center;
+    color: #d1d1d1;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+/* --- Formulario --- */
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+#operation-input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#operation-input::placeholder {
+    color: #8a8a8a;
+}
+
+#operation-input:focus {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(140, 100, 255, 0.7);
+    box-shadow: 0 0 0 3px rgba(140, 100, 255, 0.3);
+}
+
+/* --- Botón --- */
+#submit-button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(90deg, #8c64ff 0%, #a076ff 100%);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px; /* Altura fija para evitar saltos */
+}
+
+#submit-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(140, 100, 255, 0.3);
+}
+
+#submit-button:disabled {
+    background: #5a4b7a;
+    cursor: not-allowed;
+}
+
+/* --- Spinner de Carga --- */
+.spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 3px solid #ffffff;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Caja de Resultados --- */
+.result-box {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 10px;
+    color: #1a1a1a;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.result-box.error {
+    background: #ff4d4d;
+    color: #ffffff;
+}
+
+.result-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #555555;
+    margin-bottom: 0.5rem;
+}
+
+.result-box.error .result-label {
+    color: #ffe0e0;
+}
+
+#result-value {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #8c64ff;
+    line-height: 1.2;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.result-box.error #result-value {
+    color: #ffffff;
+    font-size: 1rem; /* Más pequeño para mensajes de error */
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Decoración (Opcional) --- */
+.background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.background-shapes::before, .background-shapes::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+.background-shapes::before {
+    background: rgba(140, 100, 255, 0.3);
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -100px;
+}
+
+.background-shapes::after {
+    background: rgba(100, 200, 255, 0.2);
+    width: 300px;
+    height: 300px;
+    bottom: -50px;
+    right: -50px;
+}

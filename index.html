@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-shapes"></div>
+
+    <main class="calculator-container">
+        <div class="calculator-card">
+            <h1>Calculadora IA 🧠</h1>
+            <p>Escribe cualquier operación matemática. ¡La IA la resolverá!</p>
+
+            <form id="calculator-form">
+                <div class="input-group">
+                    <label for="operation-input">Operación:</label>
+                    <input 
+                        type="text" 
+                        id="operation-input" 
+                        placeholder="Ej: 5 más 5, (20*4)/2, 100 menos 30" 
+                        autocomplete="off"
+                        required
+                    >
+                </div>
+                
+                <button type="submit" id="submit-button">
+                    <span id="button-text">Calcular</span>
+                    <div id="button-spinner" class="spinner" style="display: none;"></div>
+                </button>
+            </form>
+
+            <div id="result-box" class="result-box" style="display: none;">
+                <span class="result-label">Resultado:</span>
+                <p id="result-value"></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
