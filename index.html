@@ -3,46 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora IA</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Calculadora con IA (n8n)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
+    <!-- Decoración de fondo -->
     <div class="background-shapes"></div>
-
-    <main class="calculator-container">
+    
+    <!-- Contenedor principal -->
+    <div class="calculator-container">
         <div class="calculator-card">
-            <h1>Calculadora IA 🧠</h1>
-            <p>Escribe cualquier operación matemática. ¡La IA la resolverá!</p>
-
-            <form id="calculator-form">
-                <div class="input-group">
-                    <label for="operation-input">Operación:</label>
-                    <input 
-                        type="text" 
-                        id="operation-input" 
-                        placeholder="Ej: 5 más 5, (20*4)/2, 100 menos 30" 
-                        autocomplete="off"
-                        required
-                    >
-                </div>
-                
-                <button type="submit" id="submit-button">
-                    <span id="button-text">Calcular</span>
-                    <div id="button-spinner" class="spinner" style="display: none;"></div>
-                </button>
-            </form>
-
-            <div id="result-box" class="result-box" style="display: none;">
+            <h1>🧠 Calculadora IA</h1>
+            <p>Escribe cualquier operación matemática y déjame resolverla por ti</p>
+            
+            <div class="input-group">
+                <label for="operacionInput">Operación matemática:</label>
+                <input type="text" id="operacionInput" placeholder="Ej: 5+5, (10*2)/4, sqrt(16)...">
+            </div>
+            
+            <button id="calcularBtn">
+                <span class="button-text">✨ Calcular con IA</span>
+            </button>
+            
+            <div id="resultadoContenedor" class="result-box" style="display: none;">
                 <span class="result-label">Resultado:</span>
-                <p id="result-value"></p>
+                <div id="resultadoSpan">...</div>
             </div>
         </div>
-    </main>
+    </div>
 
-    <script src="js/app.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
